@@ -3,6 +3,7 @@ import path from "path";
 import dotenv from "dotenv";
 import express from "express";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 // ----------Utilities-----------
 import connectDB from "./config/db.js";
@@ -18,6 +19,15 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 const app = express();
+
+const corsOptions = {
+    origin: "https://ecommerce-backend-mauve-six.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
