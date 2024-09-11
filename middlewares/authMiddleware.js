@@ -8,11 +8,11 @@ const authenticate = asyncHandler(async (req, res, next) => {
 
     // Read JWT from 'jwt' cookie
     console.log("cookie: ", req.cookies);
+    console.log(process.env.JWT_SECRET);
     token = req.cookies.jwt;
     console.log(req.cookies.jwt);
     if (token) {
         try {
-            console.log(process.env.JWT_SECRET);
             const decoded = jwt.verify(token, process.env.JWT_SECRET);
             req.user = await User.findById(decoded.userId).select("-password");
             next();
