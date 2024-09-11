@@ -3,6 +3,7 @@ import asyncHandler from "./../middlewares/asyncHandler.js";
 
 const createCategory = asyncHandler(async (req, res) => {
     try {
+        console.log("here");
         const { name } = req.body;
         if (!name) {
             return res.json({ error: "Name is required" });

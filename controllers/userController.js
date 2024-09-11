@@ -49,13 +49,14 @@ const loginUser = asyncHandler(async (req, res) => {
         );
 
         if (isPasswordValid) {
-            createToken(res, existingUser._id);
+            const token = createToken(res, existingUser._id);
 
             res.status(201).json({
                 _id: existingUser._id,
                 username: existingUser.username,
                 email: existingUser.email,
                 isAdmin: existingUser.isAdmin,
+                token,
             });
             return;
         }
