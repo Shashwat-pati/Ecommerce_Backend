@@ -8,6 +8,7 @@ const generateToken = (res, userId) => {
 
     // Set JWT as HTTP-only Cookie
     res.cookie("jwt", token, {
+        domain: "https://ecommerce-backend-mauve-six.vercel.app",
         httpOnly: true,
         secure: process.env.NODE_ENV !== "development",
         sameSite: "None",
