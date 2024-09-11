@@ -11,7 +11,6 @@ const generateToken = (res, userId) => {
         domain: "https://ecommerce-backend-mauve-six.vercel.app",
         httpOnly: true,
         secure: false,
-        sameSite: "None",
         maxAge: 30 * 24 * 60 * 60 * 1000,
     });
 
