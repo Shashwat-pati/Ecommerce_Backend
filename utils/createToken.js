@@ -10,7 +10,7 @@ const generateToken = (res, userId) => {
     res.cookie("jwt", token, {
         domain: "https://ecommerce-backend-mauve-six.vercel.app",
         httpOnly: true,
-        secure: true,
+        secure: false,
         sameSite: "None",
         maxAge: 30 * 24 * 60 * 60 * 1000,
     });
