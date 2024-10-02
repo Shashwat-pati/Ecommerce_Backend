@@ -20,7 +20,24 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+// const allowedOrigins = [
+//     "http://localhost:5173",
+//     "https://ecommerce-teal-nu.vercel.app",
+// ];
+
+// app.use(
+//     cors({
+//         origin: function (origin, callback) {
+//             if (allowedOrigins.includes(origin) || !origin) {
+//                 callback(null, true);
+//             } else {
+//                 callback(new Error("Not allowed by CORS"));
+//             }
+//         },
+//         credentials: true,
+//     })
+// );
+
 // app.use((req, res, next) => {
 //     res.header(
 //         "Access-Control-Allow-Origin",
